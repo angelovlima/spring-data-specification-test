@@ -39,6 +39,7 @@ Ex.: http://localhost:8080/primary/find-pageable?page=0&size=10&sort=id,asc
 
 ### 1. Buscar com Filtros (Sem Paginação)
 
+```
 import axios from 'axios';
 
 const fetchFilteredData = async () => {
@@ -56,9 +57,11 @@ const fetchFilteredData = async () => {
 };
 
 fetchFilteredData();
+```
 
 ### 2. Buscar com Filtros e Paginação
 
+```
 import axios from 'axios';
 
 const fetchFilteredAndPaginatedData = async () => {
@@ -79,9 +82,11 @@ const fetchFilteredAndPaginatedData = async () => {
 };
 
 fetchFilteredAndPaginatedData();
+```
 
 ### 3. Buscar com Paginação (Sem Filtros)
 
+```
 import axios from 'axios';
 
 const fetchPaginatedData = async () => {
@@ -100,3 +105,4 @@ const fetchPaginatedData = async () => {
 };
 
 fetchPaginatedData();
+```
