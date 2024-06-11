@@ -37,14 +37,17 @@ public class PrimaryService {
     }
 
     public List<PrimaryDTO> findListFiltered(PrimaryEntitySpecification specification) {
+        // Busca entidades paginadas e filtradas e as converte em DTOs.
         return primaryRepository.findAll(specification).stream().map(this::toDTO).toList();
     }
 
     public Page<PrimaryDTO> findListFilteredAndPageable(PrimaryEntitySpecification specification, Pageable pageable) {
+        // Busca entidades filtradas e as converte em DTOs.
         return primaryRepository.findAll(specification, pageable).map(this::toDTO);
     }
 
     public Page<PrimaryDTO> findAllPageable(Pageable pageable) {
+        // Busca todas as entidades paginadas e as converte em DTOs.
         return primaryRepository.findAll(pageable).map(this::toDTO);
     }
 

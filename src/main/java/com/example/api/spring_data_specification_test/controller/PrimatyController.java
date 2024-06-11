@@ -27,18 +27,22 @@ public class PrimatyController {
 
     @GetMapping("/find-with-filters")
     public ResponseEntity<List<PrimaryDTO>> findAllFiltered(PrimaryEntitySpecification specification) {
+        // Chama o serviço para buscar dados filtrados sem paginação
         List<PrimaryDTO> listPrimaryDTO = primaryService.findListFiltered(specification);
+        // Retorna os dados filtrados com status HTTP 200 (OK).
         return ResponseEntity.ok(listPrimaryDTO);
     }
 
     @GetMapping("/find-with-filters-pageable")
     public ResponseEntity<Page<PrimaryDTO>> findAllFilteredAndPageable(PrimaryEntitySpecification specification, Pageable pageable) {
+        // Chama o serviço para buscar dados filtrados com paginação.
         Page<PrimaryDTO> pagePrimaryDTO = primaryService.findListFilteredAndPageable(specification, pageable);
         return ResponseEntity.ok(pagePrimaryDTO);
     }
 
     @GetMapping("/find-pageable")
     public ResponseEntity<Page<PrimaryDTO>> findAllPageable(Pageable pageable) {
+        // Chama o serviço para buscar todos os dados com paginação.
         Page<PrimaryDTO> pagePrimaryDTO = primaryService.findAllPageable(pageable);
         return ResponseEntity.ok(pagePrimaryDTO);
     }
